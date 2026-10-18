@@ -3,8 +3,8 @@
   "cjs-to-esm": "./bin/cli.js"
 },
   "name": "cjs-to-esm-converter",
-  "version": "1.0.0",
-  "description": "Convert CommonJS modules to ECMAScript Modules",
+  "version": "0.1.0",
+  "description": "Convert basic CommonJS code to ECMAScript Modules (ESM)",
   "type": "module",
   "main": "./src/converter.js",
   "exports": {
