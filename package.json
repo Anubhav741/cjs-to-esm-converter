@@ -1,4 +1,7 @@
-{
+
+{"bin": {
+  "cjs-to-esm": "./bin/cli.js"
+},
   "name": "cjs-to-esm-converter",
   "version": "1.0.0",
   "description": "Convert CommonJS modules to ECMAScript Modules",
@@ -20,6 +23,7 @@
   "license": "MIT",
   "dependencies": {
     "@babel/parser": "^8.0.7",
+    "commander": "^15.0.0",
     "recast": "^0.24.0"
   },
   "devDependencies": {
