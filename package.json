@@ -1,13 +1,28 @@
 {
   "name": "cjs-to-esm-converter",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "description": "Convert CommonJS modules to ECMAScript Modules",
+  "type": "module",
+  "main": "./src/converter.js",
+  "exports": {
+    ".": "./src/converter.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs"
+  "scripts": {
+    "test": "node --test"
+  },
+  "keywords": [
+    "commonjs",
+    "esm",
+    "converter",
+    "javascript",
+    "nodejs"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@babel/parser": "^8.0.7",
+    "recast": "^0.24.0"
+  },
+  "devDependencies": {
+    "@babel/generator": "^8.0.6"
+  }
 }
