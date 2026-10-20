@@ -1,63 +1,63 @@
-# cjs-to-esm-converter
+# cjs_esm
 
-A lightweight Node.js CLI tool that converts basic CommonJS syntax into ECMAScript Modules (ESM).
-
-## Features
-
-- Converts `require()` statements into `import` statements.
-- Converts `module.exports` into ESM exports.
-- Supports basic destructured imports.
-- Supports named exports from simple object literals.
-- Provides both a JavaScript API and a command-line interface.
-
-## Requirements
-
-- Node.js 18 or later
+A lightweight CLI tool to convert basic CommonJS modules into ES modules.
 
 ## Installation
 
 ```bash
-npm install cjs-to-esm-converter
+npm install @anubhav741/cjs_esm
 ```
 
-## CLI Usage
+## Usage
 
-Convert a CommonJS file into an ESM file:
+Convert a CommonJS file into an ES module:
 
 ```bash
-npx cjs-to-esm input.cjs -o output.mjs
+npx cjs_esm input.cjs -o output.mjs
 ```
 
-Or install the package globally:
+Options:
+
+- `-o, --output <file>` — Specify the output file.
+- `-V, --version` — Display the CLI version.
+- `-h, --help` — Display help.
+
+## Supported conversions
+
+- `require("module")` to `import`
+- Destructured `require()` to named imports
+- `module.exports = value` to `export default`
+- Simple object exports to named exports
+
+## Example
+
+Input (`input.cjs`):
+
+```js
+const fs = require("node:fs");
+module.exports = fs;
+```
+
+Run:
 
 ```bash
-npm install -g cjs-to-esm-converter
-cjs-to-esm input.cjs -o output.mjs
+npx cjs_esm input.cjs -o output.mjs
 ```
 
-## JavaScript API
+Output (`output.mjs`):
 
-```javascript
-import { convertCjsToEsm } from "cjs-to-esm-converter";
-
-const source = `
-const path = require("node:path");
-module.exports = path;
-`;
-
-const result = convertCjsToEsm(source);
-console.log(result);
+```js
+import fs from "node:fs";
+export default fs;
 ```
 
 ## Limitations
 
-This tool currently handles basic CommonJS patterns. Complex dynamic `require()` calls, conditional exports, and other advanced CommonJS patterns may not convert correctly. Review the generated code before using it in production.
+This tool supports basic CommonJS patterns. Complex or dynamic module patterns may require manual conversion. Review generated output before using it in production.
 
 ## Development
 
 ```bash
-git clone https://github.com/Anubhav741/cjs-to-esm-converter.git
-cd cjs-to-esm-converter
 npm install
 npm test
 ```
