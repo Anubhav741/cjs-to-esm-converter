@@ -1,8 +1,8 @@
 
 {"bin": {
-  "cjs-to-esm": "./bin/cli.js"
+  "c2e": "./bin/cli.js"
 },
-  "name": "cjs-to-esm-converter",
+  "name": "cjs_esm",
   "version": "0.1.0",
   "description": "Convert basic CommonJS code to ECMAScript Modules (ESM)",
   "type": "module",

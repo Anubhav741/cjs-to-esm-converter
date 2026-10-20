@@ -8,7 +8,7 @@ import { convertCjsToEsm } from "../src/converter.js";
 const program = new Command();
 
 program
-  .name("cjs-to-esm")
+  .name("c2e")
   .description("Convert basic CommonJS code to ESM")
   .version("0.1.0")
   .argument("<input>", "Input CommonJS file")
